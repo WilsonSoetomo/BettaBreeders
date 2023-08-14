@@ -1,27 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import HomePage from './components/HomePage';
-import ProductList from './components/ProductList';
-import ShoppingCart from './components/ShoppingCart';
-import Checkout from './components/Checkout';
-import Footer from './components/Footer';
+import { createRoot } from 'react-dom/client'; // Import from "react-dom/client"
+import { BrowserRouter } from 'react-router-dom';
 
+import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <Header />
-      <Routes>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/products" component={ProductList} />
-        <Route path="/cart" component={ShoppingCart} />
-        <Route path="/checkout" component={Checkout} />
-      </Routes>
-      <Footer />
-    </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+const rootElement = document.getElementById('root');
+
+const root = createRoot(rootElement);
+
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 );
-

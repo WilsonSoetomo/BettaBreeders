@@ -1,0 +1,126 @@
+/* Header.css */
+
+/* Header container */
+header {
+    background-color: #8df0e8;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease-in-out;
+
+  }
+  
+  /* Navigation links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-links li a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #FF5733;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .nav-links li a:hover:before {
+    transform: scaleX(1);
+  }
+  
+  /* Search form */
+  .cityInput {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .submitButton {
+    padding: 0.5rem 1rem;
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  .submitButton:hover {
+    background-color: #E65100;
+    transform: scale(1.05);
+  }
+  
+  /* Weather data */
+  .weatherData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    position: fixed;
+    top: 6rem; /* Adjust this value as needed */
+    right: 1rem; /* Adjust this value as needed */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure the popup is above other content */
+  }
+  
+  .weatherIcon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .weatherIcon:hover {
+    transform: rotate(360deg);
+  }
+  
+  .temp, .wind, .humidity, .uv {
+    margin: 0.2rem;
+    color: #FF5733;
+  }
+  
+  .uv {
+    font-weight: bold;
+  }
+  
+  /* Display weather data when in "weather" mode */
+  .weatherData.active {
+    opacity: 1;
+  }
